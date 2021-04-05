@@ -1,0 +1,16 @@
+Compile Task
+------
+      Clean step
+------
+------
+      Build step
+------
+Building
+Output to "a.out"
+------
+      Test Step
+------
+Basic test : CSV
+Completed process in 595.257 milliseconds
+------
+Compile task completed

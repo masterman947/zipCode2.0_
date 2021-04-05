@@ -7,8 +7,6 @@
 #define NUMBER_RECORDS 1000
 
 
-
-
 int main(int argc, char *argv[]){
     if (argc <= 1){
         // this error should be better

@@ -6,7 +6,7 @@
         {
             "label": "cleancompile",
             "type": "shell",
-            "command": "sh/cleancompile",
+            "command": "sh/cleancompile | tee lastBuild_log.txt",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
