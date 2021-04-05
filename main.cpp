@@ -19,14 +19,14 @@ int main(int argc, char *argv[]){
     std::string filename(argv[1]); // get as string
 
     BufferRead br(filename); // select file
-    BufferS buff = br.readNext(); // get first record (should be header)
-    br.print(buff); // print buffer data
+    BufferS header = br.readNext(); // get first record (should be header)
 
-    structure::LenCSV out("output.csv");
-
+    structure::SortedIndex out("output");
 
     auto start = std::chrono::high_resolution_clock::now(); // get timing for process
     //
+
+    out.writeHeader(header); // write header record
 
     std::vector<BufferData> records;
     do {

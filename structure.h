@@ -28,6 +28,7 @@ namespace structure{
             virtual std::string bts(BufferS) = 0;
 
         public:
+            virtual void writeHeader(BufferS);
             virtual void write(BufferData);
             virtual void writeAll(std::vector<BufferData>);
             void close(){ is.close(); os.close();}
@@ -38,7 +39,7 @@ namespace structure{
         std::string bts(BufferS) override;
         public:
             CSV(std::string filename){
-                filepath = DATA_DIR + filename;
+                filepath = DATA_DIR + filename+"."+FILEEXT_CSV;
             }
     };
 
@@ -48,11 +49,24 @@ namespace structure{
         
         public:
             LenCSV(std::string filename){
-                filepath = DATA_DIR + filename;
+                filepath = DATA_DIR + filename+"."+FILEEXT_LEN_CSV;
             }
     };
 
 
-    class SortedIndex : DataSystem{
+    class SortedIndex : public DataSystem{
+        std::string indexFile;
+        std::ofstream indexStream;
+        protected:
+            std::string bts(BufferS) override;
+
+        public:
+        SortedIndex(std::string filename){
+                filepath = DATA_DIR + filename+"."+FILEEXT_INDEX_SORTED_DATA;
+                indexFile = DATA_DIR + filename+"."+FILEEXT_INDEX_SORTED_INDEX;
+        }
+            virtual void writeHeader(BufferS) override;
+            void write(BufferData) override;
+            void writeAll(std::vector<BufferData>)override;
     };
 }

@@ -20,7 +20,7 @@ BufferRead::BufferRead(std::string dataFile){
         // we are using a csv file
         fileType = FILETYPE_LEN_CSV;
     }
-    if (ext.compare(FILEEXT_INDEX_SORTED) == 0){
+    if (ext.compare(FILEEXT_INDEX_SORTED_DATA) == 0 || ext.compare(FILEEXT_INDEX_SORTED_INDEX) == 0){
         // we are using a csv file
         fileType = FILETYPE_INDEX_SORTED;
     }

@@ -2,7 +2,7 @@ echo "Compile Task"
 echo "------"
 echo "      Clean step"
 echo "------"
-sh/clean
+sh/clean &>/dev/null
 echo "------"
 echo "      Build step"
 echo "------"

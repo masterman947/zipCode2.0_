@@ -36,7 +36,8 @@ struct BufferData {
 
 #define FILEEXT_CSV "csv"
 #define FILEEXT_LEN_CSV "lencsv"
-#define FILEEXT_INDEX_SORTED "sindex"
+#define FILEEXT_INDEX_SORTED_DATA "sindex.data"
+#define FILEEXT_INDEX_SORTED_INDEX "sindex.index"
 
 class BufferRead {
     std::string dataFile;

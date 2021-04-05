@@ -1,3 +1,5 @@
 echo "Cleaning output"
 rm ./a.out
-
+rm ./programdata/output.csv
+rm ./programdata/output.sindex.data
+rm ./programdata/output.sindex.index
