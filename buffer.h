@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-#include <iostream>
 #include <assert.h>
+#include <iostream>
 #include <fstream>
-#include <istream>
+#include "stringutil.h"
 
 struct BufferS{
     std::string zipCode;
@@ -15,7 +15,9 @@ struct BufferS{
 };
 
 struct BufferData {
-    unsigned int zipCode;
+    BufferData(){}
+    BufferData(BufferS);
+    int zipCode;
     std::string placeName;
     std::string state;
     std::string county;
@@ -36,7 +38,8 @@ struct BufferData {
 class BufferRead {
     std::string dataFile;
     int fileType = -1;
-    int curIndex;
+    std::ifstream stream;
+    bool hasReadHeader = false;
 
     BufferS readNext_csv();
     BufferS readNext_lencsv();
@@ -48,6 +51,13 @@ public:
     BufferS readNext();
     BufferData getFrom(BufferS);
 
+    std::vector<BufferData> loadRecords(int count);
+
     void print(BufferS);
     void print(BufferData);
+
+    bool hasBufferReadHeader(){ return hasReadHeader;}
+
+    void close(){ stream.close();}
 };
+

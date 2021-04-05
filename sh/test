@@ -1,10 +1,2 @@
 echo "Basic test : CSV"
 ./a.out data/us_postal_codes.csv
-echo "Basic test : LEN_CSV"
-./a.out data/us_postal_codes.lencsv
-echo "Basic test : INDEX_SORTED"
-./a.out data/us_postal_codes.sindex
-echo "Basic test : Invalid extension"
-./a.out data/us_postal_codes.txt
-
-

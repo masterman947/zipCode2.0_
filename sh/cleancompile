@@ -1,2 +1,2 @@
 sh/compile
-sh/clean
+rm ./a.out
