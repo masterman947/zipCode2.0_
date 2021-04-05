@@ -4,7 +4,7 @@
 #include <chrono>
 
 
-#define NUMBER_RECORDS 100
+#define NUMBER_RECORDS 1000
 
 
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
     BufferS buff = br.readNext(); // get first record (should be header)
     br.print(buff); // print buffer data
 
-    structure::CSV out("output.csv");
+    structure::LenCSV out("output.csv");
 
 
     auto start = std::chrono::high_resolution_clock::now(); // get timing for process

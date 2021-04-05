@@ -18,42 +18,41 @@
 
 namespace structure{
 
-    class CSV{
-        std::string filepath;
-        std::ifstream is;
-        std::ofstream os;
+    class DataSystem{
+        protected:
+            std::string filepath;
+            std::ifstream is;
+            std::ofstream os;
 
-        std::string bts(BufferData);
-        std::string bts(BufferS);
+            virtual std::string bts(BufferData);
+            virtual std::string bts(BufferS) = 0;
 
+        public:
+            virtual void write(BufferData);
+            virtual void writeAll(std::vector<BufferData>);
+            void close(){ is.close(); os.close();}
+
+    };
+
+    class CSV : public DataSystem{
+        std::string bts(BufferS) override;
         public:
             CSV(std::string filename){
                 filepath = DATA_DIR + filename;
             }
-
-            void write(BufferData);
-            void writeAll(std::vector<BufferData>);
-            void close(){ is.close(); os.close();}
-
     };
 
-    class LenCSV{
-        std::string filepath;
-        std::ifstream is;
-        std::ofstream os;
+    class LenCSV : public DataSystem{
 
-        std::string bts(BufferData);
-        std::string bts(BufferS);
-
+        std::string bts(BufferS) override;
+        
         public:
             LenCSV(std::string filename){
                 filepath = DATA_DIR + filename;
             }
-
-            void write(BufferData);
-            void writeAll(std::vector<BufferData>);
-            void close(){ is.close(); os.close();}
     };
-    class SortedIndex{
+
+
+    class SortedIndex : DataSystem{
     };
 }

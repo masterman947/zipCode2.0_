@@ -127,3 +127,14 @@ BufferData::BufferData(BufferS sbuff){
     lat = std::stof(sbuff.lat);
     lon = std::stof(sbuff.lon);
 }
+BufferS BufferData::toStringBuffer(){
+    BufferS sbuff;
+    sbuff.zipCode = std::to_string(zipCode);
+    sbuff.placeName = placeName;
+    sbuff.state = state;
+    sbuff.county = county;
+    sbuff.lat = std::to_string(lat);
+    sbuff.lon = std::to_string(lon);
+    return sbuff;
+}
+

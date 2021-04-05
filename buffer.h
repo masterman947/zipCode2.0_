@@ -6,6 +6,7 @@
 #include "stringutil.h"
 
 struct BufferS{
+    BufferS(){}    
     std::string zipCode;
     std::string placeName;
     std::string state;
@@ -17,6 +18,8 @@ struct BufferS{
 struct BufferData {
     BufferData(){}
     BufferData(BufferS);
+    BufferS toStringBuffer();
+
     int zipCode;
     std::string placeName;
     std::string state;
