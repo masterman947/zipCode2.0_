@@ -11,6 +11,6 @@ Output to "a.out"
       Test Step
 ------
 Basic test : CSV
-Completed process in 595.257 milliseconds
+Completed process in 542.623 milliseconds
 ------
 Compile task completed
