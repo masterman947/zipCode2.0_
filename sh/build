@@ -1,0 +1,3 @@
+echo "Building"
+g++ main.cpp buffer.cpp -o ./a.out -Wall
+echo "Output to \"a.out\""

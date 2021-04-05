@@ -1,0 +1,15 @@
+echo "Compile Task"
+echo "------"
+echo "      Clean step"
+echo "------"
+sh/clean
+echo "------"
+echo "      Build step"
+echo "------"
+sh/build
+echo "------"
+echo "      Test Step"
+echo "------"
+sh/test
+echo "------"
+echo "Compile task completed"
